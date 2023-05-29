@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root{
+    --Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --Grayish-Blue: hsl(233, 13%, 49%);
+    --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+
+body{
+    background-image: url(images/bg-top.svg), url(images/bg-bottom.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: right top 60%, bottom -34vh left;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+header{
+    margin-bottom: 1rem;
+}
+
+h1{
+    color: var(--Dark-Grayish-Blue);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header div{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.toggle {
+    position : relative ;
+    display : inline-block;
+    width : 5.5rem;
+    height : 2.5rem;
+    background-color: var(--Light-Grayish-Blue);
+    border-radius: 2rem;
+}
+       
+/* After slide changes */
+.toggle:after {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: var(--Very-Light-Grayish-Blue);
+    top: 4px;
+    left: 52px;
+    transition:  background-image, left, 0.6s;
+}
+       
+/* Checkbox checked effect */
+.checkbox:checked + .toggle::after {
+    left: 3px;
+}
+       
+/* Checkbox checked toggle label bg color */
+.checkbox:checked + .toggle {
+    background-image: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+       
+/* Checkbox vanished */
+.checkbox {
+    display : none;
+}
+
+header div span{
+    color: var(--Grayish-Blue);
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: 20vw;
+    text-align: center;
+    background-color: hsl(240, 78%, 98%);
+    color: var(--Dark-Grayish-Blue);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.active{
+    box-sizing: content-box;
+    padding: 3rem 2rem;
+    background-color: hsl(237, 63%, 64%);
+    color: var(--Very-Light-Grayish-Blue);
+}
+
+.card__title{
+    font-size: 1rem;
+}
+
+.card__price{
+    font-size: 3rem;
+}
+
+.card__stats{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card__stats p{
+    font-size: .8rem;
+    padding: .5rem;
+    border-top: 1px solid var(--Light-Grayish-Blue);
+    border-bottom: 1px solid var(--Light-Grayish-Blue);
+}
+
+.card button{
+    padding: .7rem 0;
+    border: 1px solid var(--Light-Grayish-Blue);
+    background-color: transparent;
+    color: hsl(237, 63%, 64%);
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: .5rem;
+}
+
+.active button{
+    color: hsl(240, 78%, 98%);
+}
